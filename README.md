@@ -1,0 +1,4 @@
+Guardfile
+=========
+
+Better Guardfile syntax
