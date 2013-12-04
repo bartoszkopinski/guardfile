@@ -7,7 +7,7 @@ module Guard
       end
 
       def run action
-        @guardfile.run(action).on_change(*@patterns)
+        @guardfile.run(action).on_change_in(*@patterns)
       end
     end
   end

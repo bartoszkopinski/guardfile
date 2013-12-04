@@ -6,8 +6,12 @@ module Guard
         @action    = action
       end
 
-      def on_change *patterns
-        @guardfile.on_change(*patterns){ @action }
+      def on_change
+        on_change_in(@action)
+      end
+
+      def on_change_in *patterns
+        @guardfile.on_change_in(*patterns){ @action }
       end
     end
   end
