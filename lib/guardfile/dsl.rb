@@ -1,8 +1,7 @@
-require 'guard/guardfile'
-require 'guard/ui'
+require 'guard/dsl'
 
-require 'guard/dsl/action'
-require 'guard/dsl/change'
+require 'guardfile/dsl/action'
+require 'guardfile/dsl/change'
 
 module Guard
   class Dsl
