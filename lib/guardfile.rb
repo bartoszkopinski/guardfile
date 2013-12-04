@@ -1,2 +1,2 @@
 require 'guardfile/version'
-require 'guard/dsl'
+require_relative 'guard/dsl'
