@@ -29,7 +29,7 @@ with_shell do
   end
 end
 
-with_spork(all_after_pass: false, all_on_start: false, bundler: false) do
+with_spork(bundler: false) do
   run(:rspec).on_change_in(
     'config/*.rb',
     'lib/*.rb',
@@ -38,7 +38,7 @@ with_spork(all_after_pass: false, all_on_start: false, bundler: false) do
   )
 end
 
-with_rspec(rspec_env: { RAILS_ENV: 'test' }, wait: 60) do
+with_rspec(rspec_env: { RAILS_ENV: 'test' }, wait: 60, all_after_pass: false, all_on_start: false) do
   run('spec/*_spec.rb').on_change
   run('spec/lib/*_spec.rb').on_change_in('lib/*.rb')
   run('spec/views/*/*_spec.rb').on_change_in('app/views/*/*.haml')
